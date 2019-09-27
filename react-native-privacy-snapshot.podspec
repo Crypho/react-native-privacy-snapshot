@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
 
   s.preserve_paths = 'README.md', 'package.json'
-  s.source_files   = 'ios/*.{h,m}', 'libscrypt/*.{c,h}'
+  s.source_files = "RCTPrivacySnapshot/*.{h,m}"
 
   s.dependency 'React'
 end

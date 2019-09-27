@@ -38,14 +38,14 @@ RCT_EXPORT_MODULE();
     if (self->enabled) {
         UIWindow    *keyWindow = [UIApplication sharedApplication].keyWindow;
         UIImageView *blurredScreenImageView = [[UIImageView alloc] initWithFrame:keyWindow.bounds];
-        
+
         UIGraphicsBeginImageContext(keyWindow.bounds.size);
         [keyWindow drawViewHierarchyInRect:keyWindow.frame afterScreenUpdates:NO];
         UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        
-        blurredScreenImageView.image = [viewImage applyLightEffect];
-        
+
+        blurredScreenImageView.image = [viewImage applyCryphoObfuscationEffect];
+
         self->obfuscatingView = blurredScreenImageView;
         [[UIApplication sharedApplication].keyWindow addSubview:self->obfuscatingView];
 
